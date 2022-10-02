@@ -1,0 +1,45 @@
+{
+    "configurations": [    
+	    {
+	      "type": "lldb",
+	      "request": "launch",
+	      "name": "(LLDB) Launch - DEBUG",
+	      "program": "${workspaceFolder}/bin/main",
+	      "args": [],
+	      "cwd": "${workspaceFolder}",
+	    },
+	    {
+	      "name": "(LLDB) Launch - RUN",
+	      "type": "cppvsdbg",
+	      "request": "launch",
+	      "program": "${workspaceFolder}/bin/main",
+	      "args": [],
+	      "stopAtEntry": false,
+	      "cwd": "${workspaceFolder}",
+	      "environment": [],
+	      "console": "externalTerminal",
+	      "preLaunchTask": "make all"
+	    }
+        {
+            "name": "(gdb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/bin/main",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "MIMode": "gdb",
+            "miDebuggerPath": "gdb",
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for gdb",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "make all"
+        }
+    ],
+    "version": "0.2.0"
+}
